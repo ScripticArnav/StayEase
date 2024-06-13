@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { baseUrl } from "../../url";
 import "../styles/List.scss";
 import { Footer, ListingCard, Loader, Navbar } from "../components";
 import { useParams } from "react-router-dom";
@@ -15,7 +16,7 @@ const CategoryPage = () => {
   const getFeedListings = async () => {
     try {
       const response = await fetch(
-          `http://localhost:3001/properties?category=${category}`,
+          `${baseUrl}/properties?category=${category}`,
         {
           method: "GET",
         }

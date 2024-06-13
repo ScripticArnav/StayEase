@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { baseUrl } from "../../url";
 import "../styles/List.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Footer, ListingCard, Loader, Navbar } from "../components";
@@ -13,7 +14,7 @@ const PropertyList = () => {
   const getPropertyList = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/users/${user._id}/properties`,
+        `${baseUrl}/users/${user._id}/properties`,
         { method: "GET" }
       );
       const data = await response.json();

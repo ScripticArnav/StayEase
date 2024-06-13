@@ -1,0 +1,1 @@
+export const baseUrl = 'https://stayeasebackend-1.onrender.com'

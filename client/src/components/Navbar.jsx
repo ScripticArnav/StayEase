@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseUrl } from "../../url";
 import { IconButton } from "@mui/material";
 import { Search, Person, Menu } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
@@ -51,7 +52,7 @@ const Navbar = () => {
             <Person style={{ color: "var(--darkgrey)" }} />
           ) : (
             <img
-              src={`http://localhost:3001/${user.profileImagePath.substring(
+              src={`${baseUrl}/${user.profileImagePath.substring(
                 "/public".length
               )}`}
               alt="Profile Photo"

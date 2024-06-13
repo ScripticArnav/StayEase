@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { baseUrl } from "../../url";
 import "../styles/List.scss";
 import { Footer, ListingCard, Loader, Navbar } from "../components";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +13,7 @@ const ReservationList = () => {
 
   const getReservationList = async () => {
     try {
-      const res = await fetch(`http://localhost:3001/users/${userId}/reservations`, {
+      const res = await fetch(`${baseUrl}/users/${userId}/reservations`, {
         method: "GET",
       });
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseUrl } from "../../url";
 import "../styles/CreateListing.scss";
 import { Footer, Navbar } from "../components";
 import { categories, types, facilities } from "../data";
@@ -127,7 +128,7 @@ const CreateListing = () => {
 
       /* send a post request to the server */
 
-      const response = await fetch("http://localhost:3001/properties/create", {
+      const response = await fetch(`${baseUrl}/properties/create`, {
         method: "post",
         body: listingFormData
       })

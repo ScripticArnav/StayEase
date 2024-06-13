@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { baseUrl } from "../../url";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/ListingDetails.scss";
 import { facilities } from "../data";
@@ -16,7 +17,7 @@ const ListingDetail = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `${baseUrl}properties/${listingId}`,
         { method: "GET" }
       );
       const data = await response.json();
@@ -58,7 +59,7 @@ const ListingDetail = () => {
         endDate: dateRange[0].endDate.toDateString(),
         totalPrice: listing.price * dayCount,
       };
-      const res = await fetch("http://localhost:3001/bookings/create", {
+      const res = await fetch(`${baseUrl}/bookings/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +94,7 @@ const ListingDetail = () => {
             <div className="photos">
               {listing.listingphotoPaths?.map((photo) => (
                 <img
-                  src={`http://localhost:3001/${photo.replace("public", "")}`}
+                  src={`${baseUrl}/${photo.replace("public", "")}`}
                   alt=""
                 />
               ))}
@@ -110,7 +111,7 @@ const ListingDetail = () => {
 
             <div className="profile">
               <img
-                src={`http://localhost:3001/${listing.creator.profileImagePath.replace(
+                src={`${baseUrl}/${listing.creator.profileImagePath.replace(
                   "public",
                   ""
                 )}`}

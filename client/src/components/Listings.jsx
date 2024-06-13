@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { baseUrl } from "../../url";
 import { categories } from "../data";
 import "../styles/Listings.scss";
 import ListingCard from "./ListingCard";
@@ -18,8 +19,8 @@ const Listings = () => {
     try {
       const response = await fetch(
         selectedCategory !== "All"
-          ? `http://localhost:3001/properties?category=${selectedCategory}`
-          : "http://localhost:3001/properties",
+          ? `${baseUrl}/properties?category=${selectedCategory}`
+          : `${baseUrl}/properties`,
         {
           method: "GET",
         }

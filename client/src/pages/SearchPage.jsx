@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { baseUrl } from "../../url";
 import "../styles/List.scss";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,7 +15,7 @@ const SearchPage = () => {
   const getSearchListings = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3001/properties/search/${search}`,
+        `${baseUrl}/properties/search/${search}`,
         {
           method: "GET",
         }

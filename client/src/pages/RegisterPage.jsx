@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { baseUrl } from "../../url";
 import "../styles/Register.scss";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../components";
@@ -50,7 +51,7 @@ const RegisterPage = () => {
         register_form.append(key, formData[key]);
       }
 
-      const response = await fetch("http://localhost:3001/auth/register", {
+      const response = await fetch(`${baseUrl}/auth/register`, {
         method: "POST",
         body: register_form,
       });

@@ -1,4 +1,5 @@
 import React from "react";
+import { baseUrl } from "../../url";
 import "../styles/List.scss";
 import { useSelector } from "react-redux";
 import { Footer, ListingCard, Navbar } from "../components";
