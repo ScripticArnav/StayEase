@@ -7,13 +7,6 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors(
-  {
-      origin: ["https://stay-ease-server.vercel.app/"],
-      methods: ["POST", "GET"],
-      credentials: true
-  }
-));
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/", (req, res) => {
@@ -36,7 +29,7 @@ app.use("/users", userRoutes);
 const PORT = process.env.PORT || 3001;
 mongoose
   .connect(process.env.MONGO_URL, {
-    dbName: "Sapno_ka_Ghar",
+    dbName: "StayEase",
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
