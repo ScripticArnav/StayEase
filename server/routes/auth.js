@@ -48,9 +48,13 @@ router.post("/register", upload.single("profileImage"), async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  console.log("Request Body:", req.body);
   try {
     /* taking the Information from the login page */
     const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ message: "Email and password are required" });
+    }
 
     /* Check if the user exists */
     const user = await User.findOne({ email });

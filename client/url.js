@@ -1,1 +1,1 @@
-export const baseUrl = 'https://stayeasebackend-1.onrender.com'
+export const baseUrl = `http://localhost:4000`

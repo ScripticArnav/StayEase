@@ -17,7 +17,7 @@ const ListingDetail = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `${baseUrl}properties/${listingId}`,
+        `${baseUrl}/properties/${listingId}`,
         { method: "GET" }
       );
       const data = await response.json();

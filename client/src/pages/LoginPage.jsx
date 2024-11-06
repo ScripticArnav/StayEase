@@ -15,7 +15,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Email:", email, "Password:", password); 
     try {
       const response = await fetch(`${baseUrl}/auth/login`, {
         method: "POST",
