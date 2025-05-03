@@ -26,9 +26,6 @@ app.use("/bookings", bookingRoutes);
 import userRoutes from "./routes/user.js";
 app.use("/users", userRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Server is Running");
-});
 
 /* Mongoose setup */
 const PORT = process.env.PORT || 3001;
